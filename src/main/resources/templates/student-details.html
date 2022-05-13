@@ -10,11 +10,11 @@
 <div class="container mt-5">
     <h1>Student details page</h1>
     <div th:each="el : ${studentsArray}" class="alert alert-info mt-2">
-        <h3 th:text="${el.name}"/>
-        <p th:text="'Country: ' + ${el.country}"/>
-        <p th:text="'Age: ' + ${el.age}"/>
-        <a th:href="'/students/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
-        <form th:action="'/students/' + ${el.id} + '/remove'" method="post">
+        <h3 th:text="${el.first_name}"/>
+        <p th:text="'Country: ' + ${el.email}"/>
+        <p th:text="'Age: ' + ${el.gender_id}"/>
+        <a th:href="'/students/' + ${el.student_id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
+        <form th:action="'/students/' + ${el.student_id} + '/remove'" method="post">
             <button class="btn btn-warning" type="submit">Delete</button>
         </form>
     </div>

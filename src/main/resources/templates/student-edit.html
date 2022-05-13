@@ -11,9 +11,9 @@
     <h1>Edit student page</h1>
     <div th:each="el : ${studentsArray}">
         <form method="post">
-            <input type="text" th:value="${el.name}" name="name" placeholder="Input name" class="form-control"><br>
-            <input type="text" th:value="${el.age}" name="age" placeholder="Input age" class="form-control"><br>
-            <input type="text" th:value="${el.country}" name="country" placeholder="Input country" class="form-control"><br>
+            <input type="text" th:value="${el.first_name}" name="name" placeholder="Input name" class="form-control"><br>
+            <input type="text" th:value="${el.gender_id}" name="age" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.email}" name="country" placeholder="Input country" class="form-control"><br>
             <button type="submit" class="btn btn-success">Update student</button>
         </form>
     </div>

@@ -7,48 +7,48 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long student_id;
     @Column
-    private String name;
+    private String first_name;
     @Column
-    private Integer age;
+    private Integer gender_id;
     @Column
-    private String country;
+    private String email;
 
     public Student(String name, Integer age, String country) {
-        this.name = name;
-        this.age = age;
-        this.country = country;
+        this.first_name = name;
+        this.gender_id = age;
+        this.email = country;
     }
 
     public Student() {
     }
 
-    public Long getId() {
-        return id;
+    public Long getStudent_id() {
+        return student_id;
     }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public void setStudent_id(Long id) {
+        this.student_id = id;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getFirst_name() {
+        return first_name;
     }
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setFirst_name(String name) {
+        this.first_name = name;
     }
 
-    public String getCountry() {
-        return country;
+    public Integer getGender_id() {
+        return gender_id;
     }
-    public void setCountry(String country) {
-        this.country = country;
+    public void setGender_id(Integer age) {
+        this.gender_id = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String country) {
+        this.email = country;
     }
 }

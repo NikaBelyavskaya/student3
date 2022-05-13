@@ -76,9 +76,9 @@ public class MainController {
     @PostMapping("/students/{id}/edit")
     public String studentsPostUpdate(@PathVariable(value = "id") Long id, @RequestParam String name, @RequestParam String age, @RequestParam String country, Model model) throws Exception {
         Student student = studentRepository.findById(id).orElseThrow(Exception::new);
-        student.setName(name);
-        student.setAge(Integer.valueOf(age));
-        student.setCountry(country);
+        student.setFirst_name(name);
+        student.setGender_id(Integer.valueOf(age));
+        student.setEmail(country);
         studentRepository.save(student);
         return "redirect:/students/{id}";
     }
