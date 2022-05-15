@@ -10,12 +10,14 @@
 <div class="container mt-5">
     <h1>Student details page</h1>
     <div th:each="el : ${studentsArray}" class="alert alert-info mt-2">
-        <h3 th:text="${el.last_name}"/>
+        <h3 th:text="${el.last_name} + ${el.first_name} + ${el.middle_name}"/>
         <h3 th:text="${el.first_name}"/>
         <h3 th:text="${el.middle_name}"/>
         <p th:text="'Date of birth: ' + ${el.birthday}"/>
         <p th:text="'Gender: ' + ${el.getGender().getName()}"/>
-        <p th:text="'Country: ' + ${el.country}"/>
+        <p th:text="'Country: ' + ${el.getCountry().getName()}"/>
+        <p th:text="'Education Form: ' + ${el.getEducationForm().getForm()}"/>
+        <p th:text="'Passport: ' + ${el.getPassportInfo().getNumber()} + ', expires '+ ${el.getPassportInfo().getDue_date()}"/>
 
 
         <a th:href="'/students/' + ${el.student_id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
