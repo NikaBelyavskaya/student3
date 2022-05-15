@@ -11,7 +11,6 @@
     <h1>All students page</h1>
     <div th:each="el : ${students}" class="alert alert-info mt-2">
         <h3 th:text="${el.first_name}"/>
-        <p th:text="${el.email}"/>
         <a th:href="'/students/' + ${el.student_id}" class="btn btn-warning">Details</a>
     </div>
 </div>

@@ -37,17 +37,17 @@ public class MainController {
         return "students";
     }
 
-    @GetMapping("/students/add")
-    public String studentsAdd(Model model){
-        return "students-add";
-    }
-
-    @PostMapping("/students/add")
-    public String studentsPostAdd(@RequestParam String name, @RequestParam String age, @RequestParam String country, Model model){
-        Student student = new Student(name, Integer.valueOf(age), country);
-        studentRepository.save(student);
-        return "redirect:/students";
-    }
+//    @GetMapping("/students/add")
+//    public String studentsAdd(Model model){
+//        return "students-add";
+//    }
+//
+//    @PostMapping("/students/add")
+//    public String studentsPostAdd(@RequestParam String name, @RequestParam String age, @RequestParam String country, Model model){
+//        Student student = new Student(name, Integer.valueOf(age), country);
+//        studentRepository.save(student);
+//        return "redirect:/students";
+//    }
 
     @GetMapping("/students/{id}")
     public String studentDetails(@PathVariable(value = "id") Long id, Model model){
@@ -61,27 +61,27 @@ public class MainController {
         return "student-details";
     }
 
-    @GetMapping("/students/{id}/edit")
-    public String studentEdit(@PathVariable(value = "id") Long id, Model model){
-        if (!studentRepository.existsById(id)){
-            return "redirect:/students";
-        }
-        Optional<Student> student = studentRepository.findById(id);
-        ArrayList<Student> studentsArray = new ArrayList<>();
-        student.ifPresent(studentsArray::add);
-        model.addAttribute("studentsArray", studentsArray);
-        return "student-edit";
-    }
+//    @GetMapping("/students/{id}/edit")
+//    public String studentEdit(@PathVariable(value = "id") Long id, Model model){
+//        if (!studentRepository.existsById(id)){
+//            return "redirect:/students";
+//        }
+//        Optional<Student> student = studentRepository.findById(id);
+//        ArrayList<Student> studentsArray = new ArrayList<>();
+//        student.ifPresent(studentsArray::add);
+//        model.addAttribute("studentsArray", studentsArray);
+//        return "student-edit";
+//    }
 
-    @PostMapping("/students/{id}/edit")
-    public String studentsPostUpdate(@PathVariable(value = "id") Long id, @RequestParam String name, @RequestParam String age, @RequestParam String country, Model model) throws Exception {
-        Student student = studentRepository.findById(id).orElseThrow(Exception::new);
-        student.setFirst_name(name);
-        student.setGender_id(Integer.valueOf(age));
-        student.setEmail(country);
-        studentRepository.save(student);
-        return "redirect:/students/{id}";
-    }
+//    @PostMapping("/students/{id}/edit")
+//    public String studentsPostUpdate(@PathVariable(value = "id") Long id, @RequestParam String name, @RequestParam String age, @RequestParam String country, Model model) throws Exception {
+//        Student student = studentRepository.findById(id).orElseThrow(Exception::new);
+//        student.setFirst_name(name);
+//        student.setGender_id(Integer.valueOf(age));
+//        student.setEmail(country);
+//        studentRepository.save(student);
+//        return "redirect:/students/{id}";
+//    }
     @PostMapping("/students/{id}/remove")
     public String studentsPostDelete(@PathVariable(value = "id") Long id, Model model) throws Exception {
         Student student = studentRepository.findById(id).orElseThrow(Exception::new);
