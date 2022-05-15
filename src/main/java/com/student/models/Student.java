@@ -191,11 +191,11 @@ public class Student {
         this.admissionInfo = admissionInfo;
     }
 
-    public Boolean getDeducted() {
+    public Boolean getIsDeducted() {
         return isDeducted;
     }
 
-    public void setDeducted(Boolean deducted) {
+    public void setIsDeducted(Boolean deducted) {
         isDeducted = deducted;
     }
 

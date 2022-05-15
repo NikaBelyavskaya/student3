@@ -15,6 +15,23 @@ public class DeductionInfo {
     @Column
     private Date date;
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @NonNull
+    public String getOrder_number() {
+        return order_number;
+    }
+
+    public void setOrder_number(@NonNull String order_number) {
+        this.order_number = order_number;
+    }
+
     public Long getDeduction_info_id() {
         return deduction_info_id;
     }
