@@ -17,9 +17,11 @@
         <p th:text="'Country: ' + ${el.getCountry().getName()}"/>
         <p th:text="'Education Form: ' + ${el.getEducationForm().getForm()}"/>
         <p th:text="'Passport: ' + ${el.getPassportInfo().getNumber()} + ', expires '+ ${el.getPassportInfo().getDue_date()}"/>
-        <p th:text="'Admission Information:' + 'Admission Date' + ${el.getAdmissionInfo().getAdmissionDate().getDate()} + ', Graduation Date '+ ${el.getAdmissionInfo().getGraduationDate().getDate()} + ', Admission Order' + ${el.getAdmissionInfo().getOrder_number()}"/>
+
+        <p th:text="'!date1' + ${el.getAdmissionInfo().getAdmissionDate().getDate()} + 'date ' + ${el.getAdmissionInfo().getGraduationDate().getDate()} + ' order' + ${el.getAdmissionInfo().getOrder_number()}"/>
+
+
         <p th:text="'Deducted?: ' + ${el.getIsDeducted()}"/>
-        <p th:text="'Deduction Information:' + 'Deduction Date' + ${el.getDeductionInfo().getDate()} + ', Deduction Order '+ ${el.getDeductionInfo().getOrder_number()}"/>
         <p th:text="'Group: ' + ${el.getGroup().getName()}"/>
         <p th:text="'Phone number: ' + ${el.getPhone_number()}"/>
         <p th:text="'Email: ' + ${el.getEmail()}"/>
