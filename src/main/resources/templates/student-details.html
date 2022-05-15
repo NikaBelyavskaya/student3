@@ -12,7 +12,6 @@
     <div th:each="el : ${studentsArray}" class="alert alert-info mt-2">
         <h3 th:text="${el.first_name}"/>
         <p th:text="'Country: ' + ${el.email}"/>
-        <p th:text="'Age: ' + ${el.gender_id}"/>
         <a th:href="'/students/' + ${el.student_id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
         <form th:action="'/students/' + ${el.student_id} + '/remove'" method="post">
             <button class="btn btn-warning" type="submit">Delete</button>
