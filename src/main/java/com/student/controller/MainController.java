@@ -84,15 +84,15 @@ public class MainController {
                                      @RequestParam String first_name_eng,
                                      @RequestParam String middle_name_eng,
                                      @RequestParam String last_name_eng,
-                                     @RequestParam String birthday,
+                                     //@RequestParam String birthday,
                                      @RequestParam String gender,
                                      @RequestParam String country,
                                      @RequestParam String educationForm,
                                      @RequestParam String passportNumber,
-                                     @RequestParam String passportDueDateString,
-                                     @RequestParam String admissionDateString,
-                                     @RequestParam String graduationDateString,
-                                     @RequestParam Boolean isDeducted,
+                                     //@RequestParam String passportDueDateString,
+                                     //@RequestParam String admissionDateString,
+                                     //@RequestParam String graduationDateString,
+                                     //@RequestParam String isDeducted,
                                      @RequestParam String deductionInfo,
                                      @RequestParam String group,
                                      @RequestParam String phoneNumber,
@@ -106,20 +106,20 @@ public class MainController {
         student.setFirst_name_eng(first_name_eng);
         student.setLast_name_eng(last_name_eng);
         student.setMiddle_name_eng(middle_name_eng);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        Date birthdayDate = (Date) formatter.parse(birthday);
-        student.setBirthday(birthdayDate);
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        //Date birthdayDate = (Date) formatter.parse(birthday);
+        //student.setBirthday(birthdayDate);
         student.getGender().setName(gender);
         student.getCountry().setName(country);
         student.getEducationForm().setForm(educationForm);
         student.getPassportInfo().setNumber(passportNumber);
-        Date passportDueDate = (Date) formatter.parse(passportDueDateString);
-        student.getPassportInfo().setDue_date(passportDueDate);
-        Date admissionDate = (Date) formatter.parse(admissionDateString);
-        student.getAdmissionInfo().getAdmissionDate().setDate(admissionDate);
-        Date graduationDate = (Date) formatter.parse(graduationDateString);
-        student.getAdmissionInfo().getGraduationDate().setDate(graduationDate);
-        student.setIsDeducted(isDeducted);
+        //Date passportDueDate = (Date) formatter.parse(passportDueDateString);
+        //student.getPassportInfo().setDue_date(passportDueDate);
+        //Date admissionDate = (Date) formatter.parse(admissionDateString);
+        //student.getAdmissionInfo().getAdmissionDate().setDate(admissionDate);
+        //Date graduationDate = (Date) formatter.parse(graduationDateString);
+        //student.getAdmissionInfo().getGraduationDate().setDate(graduationDate);
+        //student.setIsDeducted(isDeducted);
         student.getGroup().setName(group);
         student.setEmail(email);
         student.setPhone_number(phoneNumber);
