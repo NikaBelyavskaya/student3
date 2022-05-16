@@ -79,51 +79,51 @@ public class MainController {
     @PostMapping("/students/{id}/edit")
     public String studentsPostUpdate(@PathVariable(value = "id") Long id, //student_id?
                                      @RequestParam String first_name,
-                                     @RequestParam String middle_name,
-                                     @RequestParam String last_name,
-                                     @RequestParam String first_name_eng,
-                                     @RequestParam String middle_name_eng,
-                                     @RequestParam String last_name_eng,
-                                     //@RequestParam String birthday,
-                                     @RequestParam String gender,
-                                     @RequestParam String country,
-                                     @RequestParam String educationForm,
-                                     @RequestParam String passportNumber,
-                                     //@RequestParam String passportDueDateString,
-                                     //@RequestParam String admissionDateString,
-                                     //@RequestParam String graduationDateString,
-                                     //@RequestParam String isDeducted,
-                                     @RequestParam String deductionInfo,
-                                     @RequestParam String group,
-                                     @RequestParam String phoneNumber,
-                                     @RequestParam String email,
-                                     @RequestParam String additionalInfo,
+//                                     @RequestParam String middle_name,
+//                                     @RequestParam String last_name,
+//                                     @RequestParam String first_name_eng,
+//                                     @RequestParam String middle_name_eng,
+//                                     @RequestParam String last_name_eng,
+//                                     //@RequestParam String birthday,
+//                                     @RequestParam String gender,
+//                                     @RequestParam String country,
+//                                     @RequestParam String educationForm,
+//                                     @RequestParam String passportNumber,
+//                                     //@RequestParam String passportDueDateString,
+//                                     //@RequestParam String admissionDateString,
+//                                     //@RequestParam String graduationDateString,
+//                                     //@RequestParam String isDeducted,
+//                                     @RequestParam String deductionInfo,
+//                                     @RequestParam String group,
+//                                     @RequestParam String phoneNumber,
+//                                     @RequestParam String email,
+//                                     @RequestParam String additionalInfo,
                                      Model model) throws Exception {
         Student student = studentRepository.findById(id).orElseThrow(Exception::new);
         student.setFirst_name(first_name);
-        student.setMiddle_name(middle_name);
-        student.setLast_name(last_name);
-        student.setFirst_name_eng(first_name_eng);
-        student.setLast_name_eng(last_name_eng);
-        student.setMiddle_name_eng(middle_name_eng);
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        //Date birthdayDate = (Date) formatter.parse(birthday);
-        //student.setBirthday(birthdayDate);
-        student.getGender().setName(gender);
-        student.getCountry().setName(country);
-        student.getEducationForm().setForm(educationForm);
-        student.getPassportInfo().setNumber(passportNumber);
-        //Date passportDueDate = (Date) formatter.parse(passportDueDateString);
-        //student.getPassportInfo().setDue_date(passportDueDate);
-        //Date admissionDate = (Date) formatter.parse(admissionDateString);
-        //student.getAdmissionInfo().getAdmissionDate().setDate(admissionDate);
-        //Date graduationDate = (Date) formatter.parse(graduationDateString);
-        //student.getAdmissionInfo().getGraduationDate().setDate(graduationDate);
-        //student.setIsDeducted(isDeducted);
-        student.getGroup().setName(group);
-        student.setEmail(email);
-        student.setPhone_number(phoneNumber);
-        student.setAdditional_info(additionalInfo);
+//        student.setMiddle_name(middle_name);
+//        student.setLast_name(last_name);
+//        student.setFirst_name_eng(first_name_eng);
+//        student.setLast_name_eng(last_name_eng);
+//        student.setMiddle_name_eng(middle_name_eng);
+//        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        //Date birthdayDate = (Date) formatter.parse(birthday);
+//        //student.setBirthday(birthdayDate);
+//        student.getGender().setName(gender);
+//        student.getCountry().setName(country);
+//        student.getEducationForm().setForm(educationForm);
+//        student.getPassportInfo().setNumber(passportNumber);
+//        //Date passportDueDate = (Date) formatter.parse(passportDueDateString);
+//        //student.getPassportInfo().setDue_date(passportDueDate);
+//        //Date admissionDate = (Date) formatter.parse(admissionDateString);
+//        //student.getAdmissionInfo().getAdmissionDate().setDate(admissionDate);
+//        //Date graduationDate = (Date) formatter.parse(graduationDateString);
+//        //student.getAdmissionInfo().getGraduationDate().setDate(graduationDate);
+//        //student.setIsDeducted(isDeducted);
+//        student.getGroup().setName(group);
+//        student.setEmail(email);
+//        student.setPhone_number(phoneNumber);
+//        student.setAdditional_info(additionalInfo);
         //student.setGender_id(Integer.valueOf(age));
         studentRepository.save(student);
         return "redirect:/students/{id}";
