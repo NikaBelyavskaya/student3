@@ -43,7 +43,7 @@ public class PassportInfo {
         return number;
     }
 
-    public void setNumber/*(@NonNull*/ String number) {
+    public void setNumber(/*@NonNull*/ String number) {
         this.number = number;
     }
 
