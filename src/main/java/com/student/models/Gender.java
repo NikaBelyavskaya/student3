@@ -12,10 +12,10 @@ public class Gender {
     private Long gender_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private String name;
 
-    public Gender(Long gender_id, @NonNull String name) {
+    public Gender(Long gender_id,/* @NonNull*/ String name) {
         this.gender_id = gender_id;
         this.name = name;
     }
@@ -32,12 +32,12 @@ public class Gender {
         this.gender_id = gender_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(/*@NonNull*/ String name) {
         this.name = name;
     }
 }

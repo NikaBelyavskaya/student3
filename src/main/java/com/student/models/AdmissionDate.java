@@ -16,16 +16,16 @@ import java.util.Date;
         this.admission_date_id = admission_date_id;
     }
 
-    @NonNull
+//    @NonNull
     public Date getDate() {
         return date;
     }
 
-    public void setDate(@NonNull Date date) {
+    public void setDate(/*@NonNull*/ Date date) {
         this.date = date;
     }
 
-    public AdmissionDate(Long admission_date_id, @NonNull Date date) {
+    public AdmissionDate(Long admission_date_id,/* @NonNull*/ Date date) {
         this.admission_date_id = admission_date_id;
         this.date = date;
     }
@@ -38,6 +38,6 @@ import java.util.Date;
     private Long admission_date_id;
 
     @Column
-    @NonNull
+    /*@NonNull*/
     private Date date;
 }

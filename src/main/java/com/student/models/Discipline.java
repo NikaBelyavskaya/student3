@@ -20,12 +20,12 @@ public class Discipline {
         this.discipline_id = discipline_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(/*@NonNull*/ String name) {
         this.name = name;
     }
 
@@ -40,14 +40,14 @@ public class Discipline {
     public Discipline() {
     }
 
-    public Discipline(Long discipline_id, @NonNull String name, Specialization specialization) {
+    public Discipline(Long discipline_id,/* @NonNull */String name, Specialization specialization) {
         this.discipline_id = discipline_id;
         this.name = name;
         this.specialization = specialization;
     }
 
     @Column
-    @NonNull
+//    @NonNull
     private String name;
 
     @ManyToOne(cascade = CascadeType.ALL)

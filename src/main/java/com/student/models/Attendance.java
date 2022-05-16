@@ -12,7 +12,7 @@ public class Attendance {
     private Long attendance_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private Integer skips_amount;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -31,12 +31,12 @@ public class Attendance {
         this.attendance_id = attendance_id;
     }
 
-    @NonNull
+//    @NonNull
     public Integer getSkips_amount() {
         return skips_amount;
     }
 
-    public void setSkips_amount(@NonNull Integer skips_amount) {
+    public void setSkips_amount(/*@NonNull*/ Integer skips_amount) {
         this.skips_amount = skips_amount;
     }
 
@@ -59,7 +59,7 @@ public class Attendance {
     public Attendance() {
     }
 
-    public Attendance(Long attendance_id, @NonNull Integer skips_amount, Student student, Term term) {
+    public Attendance(Long attendance_id, /*@NonNull */Integer skips_amount, Student student, Term term) {
         this.attendance_id = attendance_id;
         this.skips_amount = skips_amount;
         this.student = student;

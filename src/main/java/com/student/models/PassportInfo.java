@@ -14,11 +14,11 @@ public class PassportInfo {
     private Long passport_info_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private Date due_date;
 
     @Column
-    @NonNull
+//    @NonNull
     private String number;
 
     public Long getPassport_info_id() {
@@ -29,28 +29,28 @@ public class PassportInfo {
         this.passport_info_id = passport_info_id;
     }
 
-    @NonNull
+//    @NonNull
     public Date getDue_date() {
         return due_date;
     }
 
-    public void setDue_date(@NonNull Date due_date) {
+    public void setDue_date(/*@NonNull*/ Date due_date) {
         this.due_date = due_date;
     }
 
-    @NonNull
+//    @NonNull
     public String getNumber() {
         return number;
     }
 
-    public void setNumber(@NonNull String number) {
+    public void setNumber/*(@NonNull*/ String number) {
         this.number = number;
     }
 
     public PassportInfo() {
     }
 
-    public PassportInfo(Long passport_info_id, @NonNull Date due_date, @NonNull String number) {
+    public PassportInfo(Long passport_info_id, /*@NonNull*/ Date due_date, /*@NonNull*/ String number) {
         this.passport_info_id = passport_info_id;
         this.due_date = due_date;
         this.number = number;

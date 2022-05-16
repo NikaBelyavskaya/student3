@@ -12,7 +12,7 @@ public class Group {
     private Long group_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private String name;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -27,12 +27,12 @@ public class Group {
         this.group_id = group_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(/*@NonNull*/ String name) {
         this.name = name;
     }
 
@@ -47,7 +47,7 @@ public class Group {
     public Group() {
     }
 
-    public Group(Long group_id, @NonNull String name, Specialization specialization) {
+    public Group(Long group_id, /*@NonNull*/ String name, Specialization specialization) {
         this.group_id = group_id;
         this.name = name;
         this.specialization = specialization;

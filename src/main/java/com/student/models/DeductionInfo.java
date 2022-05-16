@@ -23,12 +23,12 @@ public class DeductionInfo {
         this.date = date;
     }
 
-    @NonNull
+//    @NonNull
     public String getOrder_number() {
         return order_number;
     }
 
-    public void setOrder_number(@NonNull String order_number) {
+    public void setOrder_number(/*@NonNull*/ String order_number) {
         this.order_number = order_number;
     }
 
@@ -43,14 +43,14 @@ public class DeductionInfo {
     public DeductionInfo() {
     }
 
-    public DeductionInfo(Long deduction_info_id, Date date, @NonNull String order_number) {
+    public DeductionInfo(Long deduction_info_id, Date date, /*@NonNull*/ String order_number) {
         this.deduction_info_id = deduction_info_id;
         this.date = date;
         this.order_number = order_number;
     }
 
     @Column
-    @NonNull
+//    @NonNull
     private String order_number;
 
 

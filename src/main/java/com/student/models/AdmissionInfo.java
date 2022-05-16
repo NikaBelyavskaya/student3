@@ -12,7 +12,7 @@ public class AdmissionInfo {
     private Long admission_info_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private String order_number;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -31,12 +31,12 @@ public class AdmissionInfo {
         this.admission_info_id = admission_info_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getOrder_number() {
         return order_number;
     }
 
-    public void setOrder_number(@NonNull String order_number) {
+    public void setOrder_number(/*@NonNull*/ String order_number) {
         this.order_number = order_number;
     }
 
@@ -59,7 +59,7 @@ public class AdmissionInfo {
     public AdmissionInfo() {
     }
 
-    public AdmissionInfo(Long admission_info_id, @NonNull String order_number, AdmissionDate admissionDate, GraduationDate graduationDate) {
+    public AdmissionInfo(Long admission_info_id, /*@NonNull*/ String order_number, AdmissionDate admissionDate, GraduationDate graduationDate) {
         this.admission_info_id = admission_info_id;
         this.order_number = order_number;
         this.admissionDate = admissionDate;

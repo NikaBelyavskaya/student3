@@ -12,7 +12,7 @@ public class Mark {
     private Long mark_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private Integer mark;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -35,12 +35,12 @@ public class Mark {
         this.mark_id = mark_id;
     }
 
-    @NonNull
+//    @NonNull
     public Integer getMark() {
         return mark;
     }
 
-    public void setMark(@NonNull Integer mark) {
+    public void setMark(/*@NonNull*/ Integer mark) {
         this.mark = mark;
     }
 
@@ -71,7 +71,7 @@ public class Mark {
     public Mark() {
     }
 
-    public Mark(Long mark_id, @NonNull Integer mark, Student student, Term term, Discipline discipline) {
+    public Mark(Long mark_id,/* @NonNull*/ Integer mark, Student student, Term term, Discipline discipline) {
         this.mark_id = mark_id;
         this.mark = mark;
         this.student = student;

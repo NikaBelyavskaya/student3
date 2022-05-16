@@ -13,7 +13,7 @@ public class Faculty {
     private Long faculty_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private String name;
 
     public Long getFaculty_id() {
@@ -24,19 +24,19 @@ public class Faculty {
         this.faculty_id = faculty_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(/*@NonNull*/ String name) {
         this.name = name;
     }
 
     public Faculty() {
     }
 
-    public Faculty(Long faculty_id, @NonNull String name) {
+    public Faculty(Long faculty_id,/* @NonNull*/ String name) {
         this.faculty_id = faculty_id;
         this.name = name;
     }

@@ -12,7 +12,7 @@ public class Country {
     private Long country_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private String name;
 
     public Country() {
@@ -27,16 +27,16 @@ public class Country {
         this.country_id = country_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NonNull String name) {
+    public void setName(/*@NonNull*/ String name) {
         this.name = name;
     }
 
-    public Country(Long country_id, @NonNull String name) {
+    public Country(Long country_id,/* @NonNull*/ String name) {
         this.country_id = country_id;
         this.name = name;
     }

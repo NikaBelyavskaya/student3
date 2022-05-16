@@ -14,7 +14,7 @@ public class GraduationDate {
     private Long graduation_date_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private Date date;
 
     public Long getGraduation_date_id() {
@@ -25,19 +25,19 @@ public class GraduationDate {
         this.graduation_date_id = graduation_date_id;
     }
 
-    @NonNull
+//    @NonNull
     public Date getDate() {
         return date;
     }
 
-    public void setDate(@NonNull Date date) {
+    public void setDate(/*@NonNull*/ Date date) {
         this.date = date;
     }
 
     public GraduationDate() {
     }
 
-    public GraduationDate(Long graduation_date_id, @NonNull Date date) {
+    public GraduationDate(Long graduation_date_id,/* @NonNull*/ Date date) {
         this.graduation_date_id = graduation_date_id;
         this.date = date;
     }

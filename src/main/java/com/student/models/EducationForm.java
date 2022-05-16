@@ -12,7 +12,7 @@ public class EducationForm {
     private Long education_form_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private String form;
 
     public Long getEducation_form_id() {
@@ -23,19 +23,19 @@ public class EducationForm {
         this.education_form_id = education_form_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getForm() {
         return form;
     }
 
-    public void setForm(@NonNull String form) {
+    public void setForm(/*@NonNull*/ String form) {
         this.form = form;
     }
 
     public EducationForm() {
     }
 
-    public EducationForm(Long education_form_id, @NonNull String form) {
+    public EducationForm(Long education_form_id, /*@NonNull */String form) {
         this.education_form_id = education_form_id;
         this.form = form;
     }

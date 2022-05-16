@@ -12,7 +12,7 @@ public class Term {
     private Long term_id;
 
     @Column
-    @NonNull
+//    @NonNull
     private String number;
 
     public Long getTerm_id() {
@@ -23,19 +23,19 @@ public class Term {
         this.term_id = term_id;
     }
 
-    @NonNull
+//    @NonNull
     public String getNumber() {
         return number;
     }
 
-    public void setNumber(@NonNull String number) {
+    public void setNumber(/*@NonNull*/ String number) {
         this.number = number;
     }
 
     public Term() {
     }
 
-    public Term(Long term_id, @NonNull String number) {
+    public Term(Long term_id, /*@NonNull */String number) {
         this.term_id = term_id;
         this.number = number;
     }
