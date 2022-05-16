@@ -67,7 +67,7 @@ public class Student {
     @JoinColumn(name = "admission_info_id", referencedColumnName = "admission_info_id")
     private AdmissionInfo admissionInfo;
 
-    @Column //уточнить название или сделать снейк-стайлом
+    @Column
     private Boolean isDeducted;
 
     @ManyToOne(cascade = CascadeType.ALL)

@@ -12,13 +12,12 @@
     <div th:each="el : ${studentsArray}" class="alert alert-info mt-2">
         <h3 th:text="${el.getLast_name()} + ' ' + ${el.getFirst_name()} + ' ' + ${el.getMiddle_name()}"/>
         <p th:text="${el.getLast_name_eng()} + ' ' + ${el.getFirst_name_eng()} + ' ' + ${el.getMiddle_name_eng()}"/>
-        <p th:text="'Date of birth: ' + ${el.birthday}"/>
+        <p th:text="'Date of birth: ' + ${el.getBirthday()}"/>
         <p th:text="'Gender: ' + ${el.getGender().getName()}"/>
         <p th:text="'Country: ' + ${el.getCountry().getName()}"/>
         <p th:text="'Education Form: ' + ${el.getEducationForm().getForm()}"/>
         <p th:text="'Passport: ' + ${el.getPassportInfo().getNumber()} + ', expires '+ ${el.getPassportInfo().getDue_date()}"/>
         <p th:text="'Admission Information: Admission Date ' + ${el.getAdmissionInfo().getAdmissionDate().getDate()} + ', Graduation Date ' + ${el.getAdmissionInfo().getGraduationDate().getDate()} + ', Admission Order: ' + ${el.getAdmissionInfo().getOrder_number()}"/>
-        <p th:text="'ded: ' + ${el.getDeductionInfo().getDate()} + ', expires '+ ${el.getDeductionInfo().getOrder_number()}"/>
         <p th:text="'Deducted?: ' + ${el.getIsDeducted()}"/>
         <p th:text="'Group: ' + ${el.getGroup().getName()}"/>
         <p th:text="'Phone number: ' + ${el.getPhone_number()}"/>

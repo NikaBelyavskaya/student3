@@ -11,9 +11,26 @@
     <h1>Edit student page</h1>
     <div th:each="el : ${studentsArray}">
         <form method="post">
-            <input type="text" th:value="${el.first_name}" name="name" placeholder="Input name" class="form-control"><br>
-            <input type="text" th:value="${el.gender_id}" name="age" placeholder="Input age" class="form-control"><br>
-            <input type="text" th:value="${el.email}" name="country" placeholder="Input country" class="form-control"><br>
+            <input type="text" th:value="${el.getFirst_name()}" name="First_name" placeholder="Input name" class="form-control"><br>
+            <input type="text" th:value="${el.getLast_name()}" name="Last_name" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getMiddle_name()}" name="Middle_name" placeholder="Input country" class="form-control"><br>
+            <input type="text" th:value="${el.getFirst_name_eng()}" name="First_name_eng" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getLast_name_eng()}" name="Last_name_eng" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getMiddle_name_eng()}" name="Middle_name_eng" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getBirthday()}" name="Birthday" placeholder="Birthday" class="form-control"><br>
+            <input type="text" th:value="${el.getGender().getName()}" name="Gender" placeholder="Gender" class="form-control"><br>
+            <input type="text" th:value="${el.getCountry().getName()}" name="Country" placeholder="Country" class="form-control"><br>
+            <input type="text" th:value="${el.getEducationForm().getForm()}" name="EducationForm" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getPassportInfo().getDue_date()}" name="Passport Due_date" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getPassportInfo().getNumber()}" name="Passport Number" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getAdmissionInfo().getOrder_number()}" name="AdmissionInfo Order_number" placeholder="Input age" class="form-control"><br>
+            <input type="text" th:value="${el.getAdmissionInfo().getAdmissionDate().getDate()}" name="AdmissionDate" placeholder="Country" class="form-control"><br>
+            <input type="text" th:value="${el.getAdmissionInfo().getGraduationDate().getDate()}" name="GraduationDate" placeholder="Country" class="form-control"><br>
+            <input type="text" th:value="${el.getIsDeducted()}" name="IsDeducted" placeholder="Country" class="form-control"><br>
+            <input type="text" th:value="${el.getGroup().getName()}" name="Group" placeholder="Country" class="form-control"><br>
+            <input type="text" th:value="${el.getPhone_number()}" name="Phone_number" placeholder="Country" class="form-control"><br>
+            <input type="text" th:value="${el.getEmail()}" name="Email" placeholder="Country" class="form-control"><br>
+            <input type="text" th:value="${el.getAdditional_info()}" name="Additional_info" placeholder="Country" class="form-control"><br>
             <button type="submit" class="btn btn-success">Update student</button>
         </form>
     </div>
