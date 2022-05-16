@@ -52,32 +52,32 @@ public class MainController {
 //        return "redirect:/students";
 //    }
 
-    @GetMapping("/students/{id}")
-    public String studentDetails(@PathVariable(value = "id") Long id, Model model) {
-        if (!studentRepository.existsById(id)) {
+    @GetMapping("/students/{student_id}")
+    public String studentDetails(@PathVariable(value = "student_id") Long student_id, Model model) {
+        if (!studentRepository.existsById(student_id)) {
             return "redirect:/students";
         }
-        Optional<Student> student = studentRepository.findById(id);
+        Optional<Student> student = studentRepository.findById(student_id);
         ArrayList<Student> studentsArray = new ArrayList<>();
         student.ifPresent(studentsArray::add);
         model.addAttribute("studentsArray", studentsArray);
         return "student-details";
     }
 
-    @GetMapping("/students/{id}/edit")
-    public String studentEdit(@PathVariable(value = "id") Long id, Model model) {
-        if (!studentRepository.existsById(id)) {
+    @GetMapping("/students/{student_id}/edit")
+    public String studentEdit(@PathVariable(value = "student_id") Long student_id, Model model) {
+        if (!studentRepository.existsById(student_id)) {
             return "redirect:/students";
         }
-        Optional<Student> student = studentRepository.findById(id);
+        Optional<Student> student = studentRepository.findById(student_id);
         ArrayList<Student> studentsArray = new ArrayList<>();
         student.ifPresent(studentsArray::add);
         model.addAttribute("studentsArray", studentsArray);
         return "student-edit";
     }
 
-    @PostMapping("/students/{id}/edit")
-    public String studentsPostUpdate(@PathVariable(value = "id") Long id, //student_id?
+    @PostMapping("/students/{student_id}/edit")
+    public String studentsPostUpdate(@PathVariable(value = "student_id") Long student_id, //student_id?
                                      @RequestParam String first_name,
 //                                     @RequestParam String middle_name,
 //                                     @RequestParam String last_name,
@@ -99,7 +99,7 @@ public class MainController {
 //                                     @RequestParam String email,
 //                                     @RequestParam String additionalInfo,
                                      Model model) throws Exception {
-        Student student = studentRepository.findById(id).orElseThrow(Exception::new);
+        Student student = studentRepository.findById(student_id).orElseThrow(Exception::new);
         student.setFirst_name(first_name);
 //        student.setMiddle_name(middle_name);
 //        student.setLast_name(last_name);
@@ -126,12 +126,12 @@ public class MainController {
 //        student.setAdditional_info(additionalInfo);
         //student.setGender_id(Integer.valueOf(age));
         studentRepository.save(student);
-        return "redirect:/students/{id}";
+        return "redirect:/students/{student_id}";
     }
 
-    @PostMapping("/students/{id}/remove")
-    public String studentsPostDelete(@PathVariable(value = "id") Long id, Model model) throws Exception {
-        Student student = studentRepository.findById(id).orElseThrow(Exception::new);
+    @PostMapping("/students/{student_id}/remove")
+    public String studentsPostDelete(@PathVariable(value = "student_id") Long student_id, Model model) throws Exception {
+        Student student = studentRepository.findById(student_id).orElseThrow(Exception::new);
         studentRepository.delete(student);
         return "redirect:/students";
     }
